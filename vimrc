@@ -64,9 +64,11 @@ call plug#end()
 
 
 colorscheme gruvbox
+set background=dark
 " nerdtree
 nnoremap <leader>nt :NERDTreeToggle<CR>
 nnoremap <leader>nf :NERDTreeFind<CR>
+nnoremap <leader>nd :NERDTreeFocus<CR>
 " Start NERDTree when Vim starts with a directory argument.
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in') |
@@ -79,3 +81,5 @@ nnoremap <leader>fl :Lines<CR>
 nnoremap <leader>fh :History<CR>
 nnoremap <leader>fw :Windows<CR>
 
+" vim-rainbow
+let g:rainbow_active=1
