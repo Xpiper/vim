@@ -1,5 +1,4 @@
 " colors
-colorscheme default
 syntax enable 
 
 " 空格还有制表符
@@ -42,3 +41,20 @@ nnoremap gV `[v`]
 let mapleader=" "
 inoremap jk <esc>
 " nnoremap <leader>u :GundoToggle<CR>
+nnoremap <leader>ev :vsp $MYVIMRC<CR>
+nnoremap <leader>ez :vsp ~/.zshrc<CR>
+nnoremap <leader>sv :source $MYVIMRC<CR>
+nnoremap <leader>s :mksession<CR>
+
+
+
+
+
+call plug#begin()
+
+Plug 'morhetz/gruvbox'
+
+call plug#end()
+
+
+colorscheme gruvbox
