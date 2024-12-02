@@ -1,5 +1,6 @@
 " colors
 syntax enable 
+set noswapfile
 
 " 空格还有制表符
 set tabstop=4 " 读取TAB用4个空格表示
@@ -53,8 +54,15 @@ nnoremap <leader>s :mksession<CR>
 call plug#begin()
 
 Plug 'morhetz/gruvbox'
+Plug 'preservim/nerdtree'
 
 call plug#end()
 
 
 colorscheme gruvbox
+" nerdtree
+nnoremap <leader>n :NERDTreeFocus<CR>
+" Start NERDTree when Vim starts with a directory argument.
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 1 && isdirectory(argv()[0]) && !exists('s:std_in') |
+    \ execute 'NERDTree' argv()[0] | wincmd p | enew | execute 'cd '.argv()[0] | endif
